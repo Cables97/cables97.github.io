@@ -1,0 +1,467 @@
+:root{
+    --proxie-border: 2px solid red;
+    --button-border: 1px solid var(--color-dark-hightlight);
+    --font-family:'Figtree', sans-serif;
+
+    --color-dark-background: rgba(31,31,31,1);
+    --color-dark-font: #EEEEEE;
+    --color-dark-accent: #323232;
+    --color-dark-button: #00ADB5;
+    --color-dark-hightlight: rgba(20,255,236,1);
+    --color-dark-hltfade: rgba(20,255,236,.5);    
+
+    --color-light-background: #1f1f1f;
+    --color-light-font: #EEEEEE;
+    --color-light-accent: #323232;
+    --color-light-button: #00ADB5;
+    --color-light-hightlight: #14FFEC;
+}
+
+/* BaseSite Selectors */
+
+
+body{
+    background-image:url("imgBgdCode.png");
+    background-repeat: no-repeat;
+    background-color:var(--color-dark-background);
+
+}
+.body{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    color: var(--color-dark-font);
+    font-family: var(--font-family);
+}
+
+.options{
+    background-color: #14FFEC;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.options > i{
+    margin: 50% 50%;
+    height: 3em;
+    width: 3em;
+}
+
+
+/* Class Selectors */
+.side{
+    overflow: auto;
+    width:50%;
+    margin: 0 10px;
+    border: 1px solid var(--color-dark-accent);
+    border-radius: 2%;
+
+}
+
+.text{
+    font-family: var(--font-family);
+    color: var(--color-dark-font);
+    line-height: 150%;
+    text-align: center;
+}
+
+.logo{
+    height: 256px;
+    width:256px;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logoimg{
+    height: 256px;
+    width:256px;
+}
+
+.logo-box{
+    width: 20%;
+    margin: auto;
+    display: flex;    
+    justify-content: space-between;
+    height:50px
+}
+
+.icon{
+    border: 2px solid var(--color-dark-hightlight);
+    border-radius: 25%;
+    box-shadow: 1px 1px 4px 2px rgba(18,18,18,.5);
+}
+.icon:hover{
+    transition: .5s;
+    background-color: #eb0013;
+    border: 2px solid #cdcdcd;
+    filter: invert(100%);
+}
+
+
+/* tooltip Selectors */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    background-color:  rgba(31, 31, 31, .8);
+    color: var(--color-dark-font);
+    text-align: center;
+    padding:5px 5px;
+    border-radius: 6px;
+    width: 120px;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px; 
+    box-shadow: 0 0 5px 5px rgba(31, 31, 31, .8);
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 100;
+}
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* reUsed Class Selectors */
+
+.title{
+    font-variant: small-caps;
+    text-align: right;
+    margin-right: 5em;
+}
+
+.background{
+    background-color: rgba(31, 31, 31, .8);
+    box-shadow: 0 0 5px 5px rgba(31, 31, 31, .8);
+}
+
+.full{
+    height: 100vh;
+
+}
+
+.sectionsplit{
+    margin-top:3vh;
+    margin-left: 50%;
+	width: 50%;
+	border-top: 1px solid var(--color-dark-button);
+    box-shadow: 15px 2px 4px 4px rgba(18,18,18,.25);
+}
+
+.linesplit{
+    margin:auto;
+	width: 50%;
+	border-top: 1px solid rgba(28,110,164,0.41);
+    box-shadow: 10px 1px 4px 2px rgba(18,18,18,.25);
+}
+
+
+/* text Selectors */
+.font2{
+    font-size: .8em;
+}
+
+
+
+/* projects Selectors */
+.projects{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.projectbox{
+    width:45%;
+    margin:auto;
+    margin-top: 2%;
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: 1%;
+    box-shadow: 2px 2px 8px 2px rgba(18,18,18,.5);;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+position: absolute;
+bottom: 0;
+background: rgb(0, 0, 0);
+background: rgba(0, 0, 0, 0.5); /* Black see-through */
+color: #f1f1f1;
+width: 100%;
+transition: .5s ease;
+opacity:0;
+text-align: center;
+border-radius:0 0 5px 5px;
+font-variant: small-caps;
+}
+
+.projectbox:hover .overlay {
+opacity: 1;
+}
+
+.summary > .icon{
+    margin-top: 1em;
+    border: 2px solid var(--color-dark-hightlight);
+    border-radius: 25%;
+}
+
+/* Job collapse Selectors */
+
+.jobtopline{
+	width: 100%;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0 10px;
+	font-variant: small-caps;
+}
+
+.jobtopline > .workingdates{
+    font-size: medium;
+    margin: auto 10px;
+
+}
+
+.jobdesc > ul > li{
+   margin: 1em  auto;
+   width: 90%;
+   border:1px solid black;
+   
+}
+
+/* certifications Selectors */
+
+.certline > a{
+	width: 80%;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+    color: var(--color-text);
+	font-variant: small-caps;
+    margin: auto;
+    font-size: 1.2em;
+}
+.side-note{
+    font-variant: small-caps;
+    color: #cdcdcd;
+}
+/* Link Selectors */
+
+a:link {
+  color: var(--color-dark-font);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--color-dark-font);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-dark-font);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--color-dark-font);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* sideline Selectors */
+
+.vl{
+    height:30%;
+    border-left:3px solid var(--color-dark-accent);
+    position: absolute;
+    left: 78%;
+    margin-left: -3px;
+    top: 35%;
+}
+.dot {
+    height: 1em;
+    width: 1em;
+    background-color: var(--color-dark-accent);
+    border-radius: 50%;
+    position:absolute;
+    right: -0.4em;
+    text-align: center;
+}
+
+.dot1{
+    top:0%;
+}
+.dot2{
+    top:50%;
+}
+.dot3{
+    top:100%;
+}
+
+/* Collapsable Box Selectors */
+details{
+    width: 90%;
+    margin:auto;
+}
+
+details>summary div.icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s;
+    margin-left: auto;
+  }
+details[open] summary div.icon {
+    transform: rotate(-180deg);
+  }
+summary {
+    display: flex;
+    cursor: pointer;
+  }
+summary::-webkit-details-marker {
+    display: none;
+  }
+
+details>summary div.icon:hover {
+    background-color: var(--color-dark-hightlight);
+    box-shadow: 0px 0px 2px 2px rgba(31, 31, 31, .8);
+    transition: .5s;
+    background-color: #eb0013;
+    border: 2px solid #cdcdcd;
+  }
+
+.btn-bounce{
+    animation: btnBounce .5s ease-in-out 0s forwards;
+}
+
+@keyframes btnBounce {
+0%{
+    transform: translatey(0px);
+}
+50%{
+    transform: translatey(5px);
+}
+100%{
+    transform: translatey(0px);
+}
+
+}
+
+.btn-spin{
+    animation: btnSpin .5s ease-in-out 1s forwards;
+}
+
+@keyframes btnSpin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-180deg);
+    }
+}
+
+
+
+ /* Medium devices (landscape tablets, 768px and down) */
+ @media only screen and (max-width: 991px) {
+    body{    
+        overflow: auto;
+    }
+    .body{
+        width:95%;
+        flex-direction: column;
+    }
+
+    .side{
+        width:100%;
+        margin: 0;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+    }
+    .side::-webkit-scrollbar {
+        display: none;
+      }
+  
+     
+    /* sideline Selectors */
+    
+    .vl{
+        display: none;
+    }
+
+    .jobtopline{
+        text-align: end;
+        flex-direction: column;
+    }
+
+
+ }
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+    body{    
+        overflow: hidden;
+    }
+    .body{
+        width:100%;
+        margin: 0;
+        flex-direction: row;
+        height: 95vh;
+    }
+
+
+
+    /* Class Selectors */
+    .side{
+        width:50%;
+        margin:1%;
+        height: 95vh;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+    }
+    .side::-webkit-scrollbar {
+        display: none;
+      }
+  
+    .vl{
+        left: 95%;
+    }
+ }
+
+ /* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1600px ) {
+    body{    
+        overflow: hidden;
+    }
+    .body{
+        width:70vw;
+        margin: auto;
+        flex-direction: row;
+    }
+    
+    /* Class Selectors */
+    .side{
+        width:50%;
+    }
+    
+    .vl{
+        left: 82%;
+    }
+ }
