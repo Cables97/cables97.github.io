@@ -21,7 +21,7 @@
 
 
 body{
-    background-image:url("imgBgdCode.png");
+    background-image:url("./imgs/imgBgdCode.png");
     background-repeat: no-repeat;
     background-color:var(--color-dark-background);
 
@@ -79,11 +79,12 @@ body{
 }
 
 .logo-box{
-    width: 20%;
-    margin: auto;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;    
     justify-content: space-between;
-    height:50px
+    height:50px;
 }
 
 .icon{
@@ -120,7 +121,7 @@ body{
     left: 50%;
     margin-left: -60px; 
     box-shadow: 0 0 5px 5px rgba(31, 31, 31, .8);
-    /* Position the tooltip text - see examples below! */
+    /* Position the tooltip text */
     position: absolute;
     z-index: 100;
 }
@@ -192,20 +193,34 @@ body{
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 5px;
 }
 
 .overlay {
 position: absolute;
 bottom: 0;
-background: rgb(0, 0, 0);
 background: rgba(0, 0, 0, 0.5); /* Black see-through */
-color: #f1f1f1;
 width: 100%;
 transition: .5s ease;
 opacity:0;
-text-align: center;
 border-radius:0 0 5px 5px;
-font-variant: small-caps;
+height:30%;
+display: flex;
+flex-direction: column;
+
+}
+
+.overlay > .text{
+    font-variant: small-caps;
+    line-height: 80%;
+    padding:0;
+    margin-top:10px;
+    margin-bottom:  20px;;
+}
+
+.overlay > .programs {
+    text-align: center;
+    padding:0;
 }
 
 .projectbox:hover .overlay {
@@ -238,7 +253,6 @@ opacity: 1;
 .jobdesc > ul > li{
    margin: 1em  auto;
    width: 90%;
-   border:1px solid black;
    
 }
 
