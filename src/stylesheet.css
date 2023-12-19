@@ -245,7 +245,6 @@ opacity: 1;
 }
 
 .jobtopline > .workingdates{
-    font-size: medium;
     margin: auto 10px;
 
 }
@@ -299,34 +298,31 @@ a:active {
 }
 
 /* sideline Selectors */
-
-.vl{
+.side-scroll{
     height:30%;
-    border-left:3px solid var(--color-dark-accent);
-    position: absolute;
-    left: 78%;
-    margin-left: -3px;
+    width:.25em;
     top: 35%;
-}
-.dot {
-    height: 1em;
-    width: 1em;
-    background-color: var(--color-dark-accent);
-    border-radius: 50%;
-    position:absolute;
-    right: -0.4em;
-    text-align: center;
+    left: 84.5%;  
+    position: fixed;
+
 }
 
-.dot1{
-    top:0%;
-}
-.dot2{
-    top:50%;
-}
-.dot3{
-    top:100%;
-}
+/* The progress container (grey background) */
+.progress-container {
+    width: 100%;
+    height: 100%;
+    background: var(--color-dark-accent);
+  }
+
+  /* The progress bar (scroll indicator) */
+.progress-bar {
+    height: 10%;
+    background: var(--color-dark-button);
+    width: 100%;
+  }
+
+
+
 
 /* Collapsable Box Selectors */
 details{
@@ -414,16 +410,21 @@ details>summary div.icon:hover {
   
      
     /* sideline Selectors */
-    
-    .vl{
-        display: none;
+
+
+    .jobtopline > h3{
+        font-size: 1em;
+    }
+    .workingdates{
+        font-size: .8em;
     }
 
-    .jobtopline{
-        text-align: end;
-        flex-direction: column;
-    }
 
+
+    /*SideScroll*/
+    .side-scroll{
+        left: 98%;  
+    }
 
  }
  
@@ -448,15 +449,24 @@ details>summary div.icon:hover {
         height: 95vh;
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
-
     }
+
+        
+    .jobtopline > h3{
+        font-size: 1.2em;
+    }
+    .workingdates{
+        font-size: 1em;
+    }
+
     .side::-webkit-scrollbar {
         display: none;
       }
-  
-    .vl{
-        left: 95%;
+      /*SideScroll*/
+      .side-scroll{
+        left: 99%;  
     }
+
  }
 
  /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -474,8 +484,18 @@ details>summary div.icon:hover {
     .side{
         width:50%;
     }
-    
-    .vl{
-        left: 82%;
+  
+    .jobtopline > h3{
+        font-size: 1.2em;
     }
+    .workingdates{
+        font-size: 1em;
+    }
+
+    
+    /*SideScroll*/
+    .side-scroll{
+        left: 84.5%;  
+    }
+
  }

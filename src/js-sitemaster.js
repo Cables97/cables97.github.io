@@ -63,7 +63,7 @@ for (i = 0; i < summ.length; i++) {
 */
 
 
-
+// Copy Discord Username to clipboard
 document.getElementById('discord').addEventListener("click", () => {
   navigator.clipboard.writeText('.cables');
 
@@ -75,7 +75,7 @@ document.getElementById('discord').addEventListener("click", () => {
   console.log('username copied to clipboard: .cables');
 })
 
-
+//Copy Gmail address to clipboard
 document.getElementById('gmail').addEventListener("click", () => {
   navigator.clipboard.writeText('calebcoliver@gmail.com');
 
@@ -87,4 +87,11 @@ document.getElementById('gmail').addEventListener("click", () => {
   console.log('email copied to clipboard: calebcoliver@gmail.com');
 })
 
+document.getElementById('cv-section').onscroll = function() {myFunction()};
 
+function myFunction() {
+  let winScroll = document.getElementById('cv-section').scrollTop;
+  let height = document.getElementById('cv-section').scrollHeight - document.getElementById('cv-section').clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.height = scrolled + "%";
+} 
