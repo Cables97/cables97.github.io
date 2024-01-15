@@ -60,36 +60,102 @@ for (i = 0; i < summ.length; i++) {
     this.classList.remove('btn-bounce');
   });
 } 
+
+
+// hide an element
+document.getElementById("hide_0").style.display = "none";
+
+// show a block element
+document.getElementById("hide_1").style.display = "block";
+
+
+
+
+
+
 */
 
 
-// Copy Discord Username to clipboard
-document.getElementById('discord').addEventListener("click", () => {
-  navigator.clipboard.writeText('.cables');
+//-----------------------------------------------
+//  Dom Variables
+//-----------------------------------------------
 
+const domDiscordBtn = document.getElementById('discord');
+const domEmailBtn = document.getElementById('gmail');
+
+
+
+//-----------------------------------------------
+//  Event Listeners
+//-----------------------------------------------
+
+//event listener Arrays
+const contactBtns = ['click', 'touch'];
+
+
+contactBtns.forEach(event => domDiscordBtn.addEventListener(event, () => {
+  contactCopy('Discord');
+}))
+
+contactBtns.forEach(event => domEmailBtn.addEventListener(event, () => {
+  contactCopy('Email');
+}))
+
+
+
+function contactCopy(target){
+  let isMobile = (window.innerWidth > 991) ? true : false ;
+
+  let domTarget = '';
+  let tip = '';
+  let clip = '';
+
+  switch(target){
+
+    case 'Email':
+      domTarget = domEmailBtn.querySelector('.tooltiptext');
+      clip = 'calebcoliver@gmail.com';
+    break;  
+
+    case 'Discord':
+      domTarget = domDiscordBtn.querySelector('.tooltiptext');
+      clip = '.cables';
+    break;  
+    
+    default:
+    break;
+
+  }
+
+  navigator.clipboard.writeText(clip);
+
+  domTarget.innerHTML = target + ' Copied!';
+  console.log(target + ' copied to clipboard: calebcoliver@gmail.com');
+  domTarget.style.visibility = 'visible'
+
+  //reset tooltip text
   setTimeout(function(){
-  document.getElementById('discord').querySelector('.tooltiptext').innerHTML ='Copy Username';
+    domTarget.innerHTML ='Copy ' + tip;
+    if(isMobile){
+       domTarget.style.visibility = 'hidden';
+    }
   }, 1000);
 
-  document.getElementById('discord').querySelector('.tooltiptext').innerHTML ='User Copied!';
-  console.log('username copied to clipboard: .cables');
-})
+};
 
-//Copy Gmail address to clipboard
-document.getElementById('gmail').addEventListener("click", () => {
-  navigator.clipboard.writeText('calebcoliver@gmail.com');
 
-  setTimeout(function(){
-  document.getElementById('gmail').querySelector('.tooltiptext').innerHTML ='Copy Email';
-  }, 1000);
 
-  document.getElementById('gmail').querySelector('.tooltiptext').innerHTML ='Email Copied!';
-  console.log('email copied to clipboard: calebcoliver@gmail.com');
-})
 
-document.getElementById('cv-section').onscroll = function() {myFunction()};
 
-function myFunction() {
+
+
+
+
+
+
+document.getElementById('cv-section').onscroll = function() {progressBar()};
+
+function progressBar() {
   let winScroll = document.getElementById('cv-section').scrollTop;
   let height = document.getElementById('cv-section').scrollHeight - document.getElementById('cv-section').clientHeight;
   let scrolled = (winScroll / height) * 100;

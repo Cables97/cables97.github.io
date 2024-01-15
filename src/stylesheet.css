@@ -135,11 +135,11 @@ body{
 .title{
     font-variant: small-caps;
     text-align: right;
-    margin-right: 5em;
+    margin-right: 1em;
 }
 
 .background{
-    background-color: rgba(31, 31, 31, .8);
+    background-color: rgba(31, 31, 31, .9);
     box-shadow: 0 0 5px 5px rgba(31, 31, 31, .8);
 }
 
@@ -197,16 +197,16 @@ body{
 }
 
 .overlay {
-position: absolute;
-bottom: 0;
-background: rgba(0, 0, 0, 0.5); /* Black see-through */
-width: 100%;
-transition: .5s ease;
-opacity:0;
-border-radius:0 0 5px 5px;
-height:30%;
-display: flex;
-flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    border-radius:0 0 5px 5px;
+    height:30%;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -387,7 +387,7 @@ details>summary div.icon:hover {
 
 
 
- /* Medium devices (landscape tablets, 768px and down) */
+ /* Medium devices (landscape tablets, 991px and down) */
  @media only screen and (max-width: 991px) {
     body{    
         overflow: auto;
@@ -411,20 +411,29 @@ details>summary div.icon:hover {
      
     /* sideline Selectors */
 
+    .projectbox .overlay {
+        opacity: 1;
+        }
+    .programs > box-icon{
+        display: none;
+    }
 
-    .jobtopline > h3{
-        font-size: 1em;
+
+    .jobtopline > h2{
+        font-size: 1.25em;
     }
     .workingdates{
-        font-size: .8em;
+        font-size: .9em;
+        text-align: right;
     }
 
 
 
     /*SideScroll*/
     .side-scroll{
-        left: 98%;  
+        display: none;
     }
+
 
  }
  
@@ -452,7 +461,7 @@ details>summary div.icon:hover {
     }
 
         
-    .jobtopline > h3{
+    .jobtopline > h2{
         font-size: 1.2em;
     }
     .workingdates{
