@@ -1,0 +1,510 @@
+:root{
+    --proxie-border: 2px solid red;
+    --button-border: 1px solid var(--color-dark-hightlight);
+    --font-family:'Figtree', sans-serif;
+
+    --color-dark-background: rgba(31,31,31,1);
+    --color-dark-font: #EEEEEE;
+    --color-dark-accent: #323232;
+    --color-dark-button: #00ADB5;
+    --color-dark-hightlight: rgba(20,255,236,1);
+    --color-dark-hltfade: rgba(20,255,236,.5);    
+
+    --color-light-background: #1f1f1f;
+    --color-light-font: #EEEEEE;
+    --color-light-accent: #323232;
+    --color-light-button: #00ADB5;
+    --color-light-hightlight: #14FFEC;
+}
+
+/* BaseSite Selectors */
+
+
+body{
+    background-image:url("./imgs/imgBgdCode.png");
+    background-repeat: no-repeat;
+    background-color:var(--color-dark-background);
+
+}
+.body{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    color: var(--color-dark-font);
+    font-family: var(--font-family);
+}
+
+.options{
+    background-color: #14FFEC;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.options > i{
+    margin: 50% 50%;
+    height: 3em;
+    width: 3em;
+}
+
+
+/* Class Selectors */
+.side{
+    overflow: auto;
+    width:50%;
+    margin: 0 10px;
+    border: 1px solid var(--color-dark-accent);
+    border-radius: 2%;
+
+}
+
+.text{
+    font-family: var(--font-family);
+    color: var(--color-dark-font);
+    line-height: 150%;
+    text-align: center;
+}
+
+.logo{
+    height: 256px;
+    width:256px;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logoimg{
+    height: 256px;
+    width:256px;
+}
+
+.logo-box{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;    
+    justify-content: space-between;
+    height:50px;
+}
+
+.icon{
+    border: 2px solid var(--color-dark-hightlight);
+    border-radius: 25%;
+    box-shadow: 1px 1px 4px 2px rgba(18,18,18,.5);
+}
+.icon:hover{
+    transition: .5s;
+    background-color: #eb0013;
+    border: 2px solid #cdcdcd;
+    filter: invert(100%);
+}
+
+
+/* tooltip Selectors */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    background-color:  rgba(31, 31, 31, .8);
+    color: var(--color-dark-font);
+    text-align: center;
+    padding:5px 5px;
+    border-radius: 6px;
+    width: 120px;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px; 
+    box-shadow: 0 0 5px 5px rgba(31, 31, 31, .8);
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 100;
+}
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* reUsed Class Selectors */
+
+.title{
+    font-variant: small-caps;
+    text-align: right;
+    margin-right: 1em;
+}
+
+.background{
+    background-color: rgba(31, 31, 31, .9);
+    box-shadow: 0 0 5px 5px rgba(31, 31, 31, .8);
+}
+
+.full{
+    height: 100vh;
+
+}
+
+.sectionsplit{
+    margin-top:3vh;
+    margin-left: 50%;
+	width: 50%;
+	border-top: 1px solid var(--color-dark-button);
+    box-shadow: 15px 2px 4px 4px rgba(18,18,18,.25);
+}
+
+.linesplit{
+    margin:auto;
+	width: 50%;
+	border-top: 1px solid rgba(28,110,164,0.41);
+    box-shadow: 10px 1px 4px 2px rgba(18,18,18,.25);
+}
+
+
+/* text Selectors */
+.font2{
+    font-size: .8em;
+}
+
+
+
+/* projects Selectors */
+.projects{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.projectbox{
+    width:45%;
+    margin:auto;
+    margin-top: 2%;
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: 1%;
+    box-shadow: 2px 2px 8px 2px rgba(18,18,18,.5);;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    border-radius:0 0 5px 5px;
+    height:30%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.overlay > .text{
+    font-variant: small-caps;
+    line-height: 80%;
+    padding:0;
+    margin-top:10px;
+    margin-bottom:  20px;;
+}
+
+.overlay > .programs {
+    text-align: center;
+    padding:0;
+}
+
+.projectbox:hover .overlay {
+opacity: 1;
+}
+
+.summary > .icon{
+    margin-top: 1em;
+    border: 2px solid var(--color-dark-hightlight);
+    border-radius: 25%;
+}
+
+/* Job collapse Selectors */
+
+.jobtopline{
+	width: 100%;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0 10px;
+	font-variant: small-caps;
+}
+
+.jobtopline > .workingdates{
+    margin: auto 10px;
+
+}
+
+.jobdesc > ul > li{
+   margin: 1em  auto;
+   width: 90%;
+   
+}
+
+/* certifications Selectors */
+
+.certline > a{
+	width: 80%;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+    color: var(--color-text);
+	font-variant: small-caps;
+    margin: auto;
+    font-size: 1.2em;
+}
+.side-note{
+    font-variant: small-caps;
+    color: #cdcdcd;
+}
+/* Link Selectors */
+
+a:link {
+  color: var(--color-dark-font);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--color-dark-font);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-dark-font);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--color-dark-font);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* sideline Selectors */
+.side-scroll{
+    height:30%;
+    width:.25em;
+    top: 35%;
+    left: 84.5%;  
+    position: fixed;
+
+}
+
+/* The progress container (grey background) */
+.progress-container {
+    width: 100%;
+    height: 100%;
+    background: var(--color-dark-accent);
+  }
+
+  /* The progress bar (scroll indicator) */
+.progress-bar {
+    height: 10%;
+    background: var(--color-dark-button);
+    width: 100%;
+  }
+
+
+
+
+/* Collapsable Box Selectors */
+details{
+    width: 90%;
+    margin:auto;
+}
+
+details>summary div.icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s;
+    margin-left: auto;
+  }
+details[open] summary div.icon {
+    transform: rotate(-180deg);
+  }
+summary {
+    display: flex;
+    cursor: pointer;
+  }
+summary::-webkit-details-marker {
+    display: none;
+  }
+
+details>summary div.icon:hover {
+    background-color: var(--color-dark-hightlight);
+    box-shadow: 0px 0px 2px 2px rgba(31, 31, 31, .8);
+    transition: .5s;
+    background-color: #eb0013;
+    border: 2px solid #cdcdcd;
+  }
+
+.btn-bounce{
+    animation: btnBounce .5s ease-in-out 0s forwards;
+}
+
+@keyframes btnBounce {
+0%{
+    transform: translatey(0px);
+}
+50%{
+    transform: translatey(5px);
+}
+100%{
+    transform: translatey(0px);
+}
+
+}
+
+.btn-spin{
+    animation: btnSpin .5s ease-in-out 1s forwards;
+}
+
+@keyframes btnSpin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-180deg);
+    }
+}
+
+
+
+ /* Medium devices (landscape tablets, 991px and down) */
+ @media only screen and (max-width: 991px) {
+    body{    
+        overflow: auto;
+    }
+    .body{
+        width:95%;
+        flex-direction: column;
+    }
+
+    .side{
+        width:100%;
+        margin: 0;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+    }
+    .side::-webkit-scrollbar {
+        display: none;
+      }
+  
+     
+    /* sideline Selectors */
+
+    .projectbox .overlay {
+        opacity: 1;
+        }
+    .programs > box-icon{
+        display: none;
+    }
+
+
+    .jobtopline > h2{
+        font-size: 1.25em;
+    }
+    .workingdates{
+        font-size: .9em;
+        text-align: right;
+    }
+
+
+
+    /*SideScroll*/
+    .side-scroll{
+        display: none;
+    }
+
+
+ }
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+    body{    
+        overflow: hidden;
+    }
+    .body{
+        width:100%;
+        margin: 0;
+        flex-direction: row;
+        height: 95vh;
+    }
+
+
+
+    /* Class Selectors */
+    .side{
+        width:50%;
+        margin:1%;
+        height: 95vh;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+        
+    .jobtopline > h2{
+        font-size: 1.2em;
+    }
+    .workingdates{
+        font-size: 1em;
+    }
+
+    .side::-webkit-scrollbar {
+        display: none;
+      }
+      /*SideScroll*/
+      .side-scroll{
+        left: 99%;  
+    }
+
+ }
+
+ /* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1600px ) {
+    body{    
+        overflow: hidden;
+    }
+    .body{
+        width:70vw;
+        margin: auto;
+        flex-direction: row;
+    }
+    
+    /* Class Selectors */
+    .side{
+        width:50%;
+    }
+  
+    .jobtopline > h3{
+        font-size: 1.2em;
+    }
+    .workingdates{
+        font-size: 1em;
+    }
+
+    
+    /*SideScroll*/
+    .side-scroll{
+        left: 84.5%;  
+    }
+
+ }

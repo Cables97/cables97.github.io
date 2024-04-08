@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cable's Page</title>
+        <!--<link rel="icon" type="image/x-icon" href="/images/favicon.ico">-->
+        <link rel="stylesheet" href="./src/stylesheet.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,500;0,600;1,300;1,500;1,600&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="icon" type="image/x-icon" href="src/Favicon.png">
+  
+    </head>
+
+    <body>
+
+        <!--<div id="options">
+            <div class="options">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>-->
+
+
+
+        <div class="body">
+
+
+            <!--Left Side / About Section-->
+        <div id='about-section' class="side full background">
+
+            <div id='logo' class="logo">
+                <img class="logoimg" src="./src/imgs/Logo_mini_transparent_white.png">
+            </div>
+
+            <div class="text">
+                <h3>Hi, I am</h3>
+                <h1>Caleb <span class="font2"> -Cables- </span> Universe</h1>
+            </div>
+
+
+            <div class="text">
+                <h4>A Front-End Developer</h4>
+                <p>-insertBioHere();-</p>
+            </div>
+
+            <div class="text">
+                Contact:
+            </div>
+
+            <div class="logo-box">
+
+                    <div class="tooltip" id='discord'>
+                        <box-icon  type='logo' name='discord-alt' color="white" size="md" class='icon'></box-icon>
+                        <span class="tooltiptext">Copy Username</span>
+                    </div>
+
+
+                    <a href="https://github.com/Cables97" target="_blank" rel="noopener noreferrer" class="link">
+                        <box-icon id='github' name='github' type='logo' color="white" size="md" class='icon'></box-icon>
+                    </a>
+
+                    
+                    <div class="tooltip" id='gmail'>
+                        <box-icon  name='gmail' type='logo' color="white" size="md" class='icon'></box-icon>
+                        <span class="tooltiptext">Copy Email</span>
+                    </div>
+
+
+                    <a href="https://www.artstation.com/calebemboliver"  target="_blank" rel="noopener noreferrer" class="link">
+                        <box-icon id='portfolio' type='solid' name='palette' color="white" size="md" class='icon'></box-icon>
+                    </a>
+                    
+            </div>
+
+
+            <div class="text">
+                <a href="/src/resume" download>
+                    <p>Download Resume</p>
+                </a>
+            </div>
+       </div>
+
+
+
+
+
+            <!--Right Side / CV Section-->
+        <div id='cv-section' class="side full background">
+
+            <div id="sideline" class="side-scroll">
+                <div class="progress-container">
+                    <div class="progress-bar" id="myBar"></div>
+                  </div>
+            </div>
+
+
+
+            <!--Recent Posts section. WIP
+            <div class="section" id="recent-posts">
+                <h2 class="title">Recent posts</h2>
+                <div class="projects">
+
+                    
+                    <div class="projectbox"></div>
+                    <div class="projectbox"></div>
+                </div>
+            </div>
+
+            <div class="sectionsplit"></div>-->
+
+
+            <div class="section" id="recent-projects">
+                <h2 class="title">Recent Projects</h2>
+                <div class="projects">
+
+                    <div class="projectbox" id="DrinkingGame">
+                        <a href="https://cables97.github.io/MealMaker"  target="_blank" rel="noopener noreferrer" class="link">   
+                            <img src="./src/imgs/imgMealMaker.png" alt="Avatar" class="image">
+                        </a>
+                        <div class="overlay">
+                            <h2 class="text">MealMaker</h2>
+                            <div class="programs">
+                                <box-icon type='logo' size="sm" name='sass' color="white"></box-icon>
+                                <box-icon type='logo' name='html5' size="sm" color="white"></box-icon>
+                                <box-icon type='logo' name='javascript' size="sm" color="white"></box-icon>
+                                <box-icon name='visual-studio' type='logo' size="sm" color="white"></box-icon>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="projectbox" id="DrinkingGame">
+                        <a href="https://cables97.github.io/DrinkingCardGame"  target="_blank" rel="noopener noreferrer" class="link">   
+                            <img src="./src/imgs/imgDrinkingCards.png" alt="Avatar" class="image">
+                        </a>
+                        <div class="overlay">
+                            <h2 class="text">Drinking Card Game</h2>
+                            <div class="programs">
+                                <box-icon type='logo' size="sm" name='css3' color="white"></box-icon>
+                                <box-icon type='logo' name='html5' size="sm" color="white"></box-icon>
+                                <box-icon type='logo' name='javascript' size="sm" color="white"></box-icon>
+                                <box-icon name='visual-studio' type='logo' size="sm" color="white"></box-icon>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="projectbox" id="textAdventure">
+                        <a href="https://cables97.github.io/TextAdventure"  target="_blank" rel="noopener noreferrer" class="link">   
+                            <img src="./src/imgs/imgTextAdventure.png" alt="Avatar" class="image">
+                        </a>
+                        <div class="overlay">
+                            <h2 class="text">Text Adventure Engine</h2>
+                            <div class="programs">
+                                <box-icon  type='logo' size="sm" name='css3' color="white"></box-icon>
+                                <box-icon  type='logo' name='html5' size="sm" color="white"></box-icon>
+                                <box-icon  type='logo' name='javascript' size="sm" color="white"></box-icon>
+                                <box-icon  name='visual-studio' type='logo' size="sm" color="white"></box-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="projectbox" id="FrontEndExercises">
+                        <a href="https://cables97.github.io/FrontEndExercises/"  target="_blank" rel="noopener noreferrer" class="link">   
+                            <img src="https://placehold.co/400/grey/white?text=Front-End\nExercises" alt="Avatar" class="image">
+                        </a>
+                        <div class="overlay">
+                            <h2 class="text">Front-End Exercises</h2>
+                            <div class="programs">
+                                <box-icon type='logo' size="sm" name='css3' color="white"></box-icon>
+                                <box-icon type='logo' name='html5' size="sm" color="white"></box-icon>
+                                <box-icon type='logo' name='javascript' size="sm" color="white"></box-icon>
+                                <box-icon name='visual-studio' type='logo' size="sm" color="white"></box-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="sectionsplit"></div>
+
+            <div class="section" id="abilites">
+                <h2 class="title">Skills</h2>
+            </div>
+
+            <div class="sectionsplit"></div>
+
+            <div class="section" id="experience">
+                <h2 class="title">Experience</h2>
+
+
+                <details id="freelance">
+                    <summary class="summary">
+                        <div class="jobtopline ">
+                            <h2>Freelance Artist</h2>
+                            <h3 class="workingdates">February 2020 – Current</h3>   
+                        </div>
+                            <div class="icon"><box-icon name='chevrons-down' color="white"></box-icon></div>
+                    </summary>
+                    <div class="jobdesc">
+                        <ul class='bx-ul'>
+                            <li><i  class='bx  bx-right-arrow'></i>Collaborated with clients on cosplay design projects, bringing their characters to life with accurate and detailed costumes and props</li>
+                            <li><i  class='bx  bx-right-arrow'></i>Iteratively developed custom 3D printable files for clients, ensuring optimal functionality, structural integrity, and scale</li>
+                            <li><i  class='bx  bx-right-arrow'></i>Utilized strong artistic and conceptual skills to create compelling visual representations of client ideas, enhancing their overall brand image through visual story telling</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <div class="linesplit"></div>
+
+                <details id="gearbox">
+                    <summary class="summary">
+                        <div class="jobtopline ">
+                            <h2>3D Artist</h2>
+                            <h3 class="workingdates">February 2020 – November 2020</h3>
+                        </div>
+                        <div class="icon"><box-icon name='chevrons-down' color="white"></box-icon></div>
+                    </summary>
+                    <div class="jobdesc">
+                        <h4 class="companyname">THE MECHANICAL WORLD OF DR. GEARBOX</h4>
+                        <ul class='bx-ul'>
+                            <li><i  class='bx  bx-right-arrow'></i>Modeled and textured 65 clothing models, achieving seamless integration with existing character designs</li>
+                            <li><i  class='bx  bx-right-arrow'></i>Created 5 stylized creatures, utilizing modeling, rigging, and animation techniques based on provided references</li>
+                            <li><i  class='bx  bx-right-arrow'></i>Managed all aspects of asset production, including high-resolution details, low-poly optimization, UV mapping, and texturing</li>
+                            <li><i  class='bx  bx-right-arrow'></i>Contributed to refining and enhancing final animations, ensuring a polished and visually distinct final result</li>
+                            <li><i  class='bx  bx-right-arrow'></i>Collaborated closely with Art Director and 3D Lead, actively incorporating feedback to iterate and improve work</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <div class="linesplit"></div>
+
+                <details id="ubinext">
+                    <summary class="summary">
+                        <div class="jobtopline ">
+                            <h2>3D Art Finalist</h2>
+                            <h3 class="workingdates">December 2018 - March 2019</h3>
+                        </div>
+                        <div class="icon"><box-icon name='chevrons-down' color="white"></box-icon></div>
+                    </summary>
+                    <div class="jobdesc">
+                        <h4 class="companyname">UBISOFT NEXT 2019 CONTEST</h4>
+                        <ul class='bx-ul'>
+                            <li><i  class='bx  bx-right-arrow'></i>Showcased creativity and attention to detail by creating a visually captivating, decrepit Victorian-style operating theater</li>
+                            <li><i  class='bx  bx-right-arrow'></i>Demonstrated versatility by designing, modeling, texturing, and rigging 7 unique and engaging creatures for the project</li>
+                            <li><i  class='bx  bx-right-arrow'></i>Designed, modeled, and textured over 70 game-ready assets, ensuring smooth integration into the scene’s immersive environment</li>
+                            <li><i  class='bx  bx-right-arrow'></i>Utilized lighting and rendering techniques to create a dynamic and visually stunning scene, displayed a looping fly-through using Unity 3D</li>
+                        </ul>
+                    </div>
+                </details>
+
+
+            </div>
+
+            <div class="sectionsplit"></div>
+
+            <div  id="certifications" class="section">
+                <h2 class="title" id="certs">Education</h2>
+                <details>
+                    
+                    <summary class="summary">
+                        <p class="side-note" id="">click to expand....</p>
+                        <div class="icon"><box-icon name='chevrons-down' color="white"></box-icon></div>
+                    </summary>
+
+                    <div class="certline">
+                        <a href="https://www.freecodecamp.org/certification/Cables/back-end-development-and-apis" target="_blank" rel="noopener noreferrer">
+                            <h5>Back End Development and APIs</h5>
+                            <h6>FreeCodeCamp</h6>
+                        </a>
+                    </div>
+        
+                    <div class="linesplit"></div>
+
+                    <div class="certline">
+                        <a href="https://www.freecodecamp.org/certification/Cables/front-end-development-libraries" target="_blank" rel="noopener noreferrer">
+                            <h5>Front End Development Libraries</h5> 
+                            <h6>FreeCodeCamp</h6>
+                        </a>
+                    </div>
+        
+                    <div class="linesplit"></div>
+        
+                    <div class="certline">
+                        <a href="https://www.freecodecamp.org/certification/Cables/javascript-algorithms-and-data-structures" target="_blank" rel="noopener noreferrer">
+                            <h5>JavaScript Algorithms and Data Structures</h5>
+                            <h6>FreeCodeCamp</h6>
+                        </a>
+                    </div>
+        
+                    <div class="linesplit"></div>
+        
+                    <div class="certline">
+                        <a href="https://www.freecodecamp.org/certification/Cables/responsive-web-design" target="_blank" rel="noopener noreferrer">
+                            <h5>Responsive Web Design</h5>
+                            <h6>FreeCodeCamp</h6>
+                        </a>
+                    </div>
+        
+                    <div class="linesplit"></div>
+        
+                    <div class="certline">
+                        <a href="https://www.freecodecamp.org/certification/Cables/responsive-web-design" target="_blank" rel="noopener noreferrer">      
+                            <h5>Video Game Design and Development OCAD</h5>
+                            <h6>Fanshawe College</h6>
+                        </a>
+                    </div>
+
+                </details>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="./src/js-sitemaster.js"></script>
+    </body>
+
+</html>
