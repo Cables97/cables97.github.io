@@ -1,4 +1,6 @@
-//Blub extend toggle
+//-------------------------
+// Blurb Extend toggle
+//-------------------------
 let blurbs = document.querySelectorAll('.section-blurb');
 blurbs.forEach(element => {
     element.addEventListener('click', () =>{
@@ -30,11 +32,9 @@ function expandingSection(element){
   //clicking again shortens it, text disappears 
 }
 
-
-
-
-
-//modal button assigns
+//-------------------------
+// Modal Buttons
+//-------------------------
 let modalBtns = document.querySelectorAll('.all-proj');
 modalBtns.forEach(element => {
   element.addEventListener('click', ()=>{
@@ -42,8 +42,10 @@ modalBtns.forEach(element => {
     modalToggle();
   })
 })
+
 function modalToggle(){
   let modal = document.getElementById('modal');
+  console.log('modal toggle')
   if(!modal.classList.contains('modal-active')){
     modal.classList.add('modal-active')
 
@@ -53,23 +55,101 @@ function modalToggle(){
   }
 }
 
-//reveal on scroll
+
+//-------------------------
+// Scroll Reveal
+//-------------------------
 window.addEventListener("scroll", reveal);
 function reveal() {
   let reveals = document.querySelectorAll(".reveal");
     for (let i = 0; i < reveals.length; i++) {
       let windowHeight = window.innerHeight;
       let elementTop = reveals[i].getBoundingClientRect().top;
-      let elementVisible = 400;
+      let elementVisible = 200;
       if (elementTop < windowHeight - elementVisible) {
         reveals[i].classList.add("active");
       }
     }
+}
+
+
+//-------------------------
+// Error Popup
+//-------------------------
+
+function errorBoxPop(strError, strColor) {
+  let errorBox = document.getElementById('error-pop');
+  let errorMsgBox = errorBox.querySelectorAll('p')[0];
+  errorMsgBox.innerHTML = strError;
+  errorMsgBox.style.color = strColor;
+  errorBox.classList.add('popup');
+
+  setTimeout(() => {
+    errorBox.classList.remove('popup');
+  }, 5000);
+}
+
+//-------------------------
+// Contact form
+//-------------------------
+
+function clearForm(){
+  document.getElementById("contact-form-name").value = "";
+  document.getElementById("contact-form-email").value = "";
+  document.getElementById("contact-form-message").value = "";
+}
+
+function verifyForm(){
+  let name = document.getElementById("contact-form-name");
+  let email = document.getElementById("contact-form-email");
+  let message = document.getElementById("contact-form-message");
+
+  let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let emailCheck = emailRegex.test(email.value);
+
+  if(name.value === ""){
+    return false;
   }
 
+  if(!emailCheck){
+    return false;
+  }
+  
+  if(message.value === ""){
+    return false;
+  }
+
+  return true;
+}
+
+emailjs.init({
+  publicKey: 'ulPbOaIOyWSrlW4l0',
+});
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    let verify = verifyForm();
+    if(verify){
+      // these IDs from the previous steps
+      emailjs.sendForm('service_fymm5s8', 'contact_form', this)
+          .then(() => {
+              console.log('SUCCESS!');
+              errorBoxPop("Success! Email Sent!", "green");
+              clearForm();
+          }, (error) => {
+              console.log('FAILED...', error);
+              errorBoxPop("An error occurred, please try again later", "red");
+          });
+    } else {
+      errorBoxPop("There is an issue with the input information", "$text-color");
+    }
 
 
-
+    
+});
+//-------------------------
+// Contact Buttons
+//-------------------------
 
 document.getElementById("discord").addEventListener('click', () =>{
   contactCopy('Discord');
@@ -119,32 +199,23 @@ document.addEventListener('mousemove', (e) => {
     follow.style.top = e.pageY - 40 + 'px';
 });
 
+//-------------------------
+// Light / Dark Mode
+//-------------------------
 
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+const currentTheme = localStorage.getItem("theme");
 
-function parseForm(){
+  if (currentTheme == "dark") {
+    document.body.classList.toggle("dark-mode");
+  } else if (currentTheme == "light") {
+    document.body.classList.toggle("light-mode");
+  }
 
-  let formName = document.getElementById('contact-form-name').value;
-  let formEmail = document.getElementById('contact-form-email').value;
-  let formMessage = document.getElementById('contact-form-message').value;
+  document.getElementById("btn").addEventListener('click', ()=>{
+    document.body.classList.toggle("dark-mode");
+    var theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
 
-
-
-}
-
-
-emailjs.init({
-  publicKey: 'ulPbOaIOyWSrlW4l0',
-});
-
-window.onload = function() {
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      // these IDs from the previous steps
-      emailjs.sendForm('contact_service', 'contact_form', this)
-          .then(() => {
-              console.log('SUCCESS!');
-          }, (error) => {
-              console.log('FAILED...', error);
-          });
+    console.log(theme);
+    localStorage.setItem("theme", theme);
   });
-}
