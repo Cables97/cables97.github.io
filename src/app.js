@@ -35,7 +35,7 @@ function expandingSection(element){
 //-------------------------
 // Modal Buttons
 //-------------------------
-let modalBtns = document.querySelectorAll('.all-proj');
+/*let modalBtns = document.querySelectorAll('.all-proj');
 modalBtns.forEach(element => {
   element.addEventListener('click', ()=>{
     console.log('open modal');
@@ -54,7 +54,7 @@ function modalToggle(){
 
   }
 }
-
+*/
 
 //-------------------------
 // Scroll Reveal
@@ -131,22 +131,24 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     let verify = verifyForm();
     if(verify){
       // these IDs from the previous steps
-      emailjs.sendForm('service_fymm5s8', 'contact_form', this)
+      emailjs.sendForm('service_gop0d1m', 'contact_form', this)
           .then(() => {
               console.log('SUCCESS!');
-              errorBoxPop("Success! Email Sent!", "green");
+              errorBoxPop("Success! Email Sent!", "var(--text-color)");
               clearForm();
           }, (error) => {
               console.log('FAILED...', error);
-              errorBoxPop("An error occurred, please try again later", "red");
+              errorBoxPop("An error occurred, please try again later", "var(--text-color)");
           });
     } else {
-      errorBoxPop("There is an issue with the input information", "$text-color");
+      errorBoxPop("There is an issue with the input information", "var(--text-color)");
     }
 
 
     
 });
+
+
 //-------------------------
 // Contact Buttons
 //-------------------------
@@ -219,3 +221,9 @@ const currentTheme = localStorage.getItem("theme");
     console.log(theme);
     localStorage.setItem("theme", theme);
   });
+
+
+//-------------------------
+// Resume Download
+//-------------------------
+
