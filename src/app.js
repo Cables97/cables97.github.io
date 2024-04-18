@@ -207,14 +207,17 @@ document.addEventListener('mousemove', (e) => {
 
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 const currentTheme = localStorage.getItem("theme");
+const darkBtn = document.getElementById("dark-btn")
 
   if (currentTheme == "dark") {
     document.body.classList.toggle("dark-mode");
+    darkBtn.checked = true;
   } else if (currentTheme == "light") {
     document.body.classList.toggle("light-mode");
+    darkBtn.checked = false;
   }
 
-  document.getElementById("btn").addEventListener('click', ()=>{
+  darkBtn.addEventListener('click', ()=>{
     document.body.classList.toggle("dark-mode");
     var theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
 
