@@ -170,7 +170,7 @@ function contactCopy(contactInfo){
   switch(contactInfo){
 
     case 'Email':
-      clip = 'calebcoliver@gmail.com';
+      clip = 'calebuniversedev@gmail.com';
     break;  
 
     case 'Discord':
