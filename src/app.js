@@ -1,7 +1,7 @@
 //-------------------------
 // Blurb Extend toggle
 //-------------------------
-let blurbs = document.querySelectorAll('.section-blurb');
+let blurbs = document.querySelectorAll('.collapse');
 blurbs.forEach(element => {
     element.addEventListener('click', () =>{
       expandingSection(element);
@@ -35,7 +35,7 @@ function expandingSection(element){
 //-------------------------
 // Modal Buttons
 //-------------------------
-/*let modalBtns = document.querySelectorAll('.all-proj');
+/**/let modalBtns = document.querySelectorAll('.all-proj');
 modalBtns.forEach(element => {
   element.addEventListener('click', ()=>{
     console.log('open modal');
@@ -54,7 +54,7 @@ function modalToggle(){
 
   }
 }
-*/
+
 
 //-------------------------
 // Scroll Reveal

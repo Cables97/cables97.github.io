@@ -322,6 +322,83 @@ body.dark-mode {
   cursor: pointer;
 }
 
+.mini-blurb {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 32px auto;
+  background-color: var(--secondary);
+  border-radius: 5px;
+  padding: 1em;
+  box-shadow: 2px 2px 5px 2px rgba(54, 54, 54, 0.25);
+  border: 1px solid rgba(92, 92, 92, 0.1);
+  transition: transform 0.25s;
+  cursor: pointer;
+}
+.mini-blurb:hover {
+  transform: translate(0, -0.5em);
+}
+.mini-blurb .blurb-text-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  height: 100%;
+}
+.mini-blurb .blurb-text-wrapper .blurb-text-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 1em;
+}
+.mini-blurb .blurb-text-wrapper .blurb-text-head h2 {
+  margin: 0;
+  font-family: var(--font-text);
+  color: var(--text-color);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 32px;
+}
+.mini-blurb .blurb-text-wrapper .blurb-text-head h4 {
+  font-family: var(--font-text);
+  color: var(--text-color);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+.mini-blurb .blurb-text-wrapper .blurb-text-head h6 {
+  font-family: var(--font-text);
+  color: var(--text-color);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 150%;
+  padding: 0;
+  margin: 0;
+}
+.mini-blurb .blurb-text-wrapper p {
+  margin-left: 2em;
+  font-family: var(--font-text);
+  color: var(--text-color);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
+  text-wrap: wrap;
+}
+.mini-blurb .blurb-text-wrapper hr {
+  width: 60%;
+  height: 2px;
+  background-color: var(--text-color);
+  margin: auto;
+}
+.mini-blurb .blurb-text-wrapper .blurb-text {
+  display: none;
+  opacity: 0;
+}
 section {
   min-height: 955px;
   opacity: 0;
@@ -648,7 +725,7 @@ section {
   transform: translate(-50%, -50%);
   height: 800px;
   width: 600px;
-  background-color: var(--secondary);
+  background-color: var(--background);
 }
 .modal-wrapper .modal h3 {
   font-family: var(--font-text);
