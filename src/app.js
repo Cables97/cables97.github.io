@@ -35,26 +35,6 @@ function expandingSection(element){
 //-------------------------
 // Modal Buttons
 //-------------------------
-/**/let modalBtns = document.querySelectorAll('.all-proj');
-modalBtns.forEach(element => {
-  element.addEventListener('click', ()=>{
-    console.log('open modal');
-    modalToggle();
-  })
-})
-
-function modalToggle(){
-  let modal = document.getElementById('modal');
-  console.log('modal toggle')
-  if(!modal.classList.contains('modal-active')){
-    modal.classList.add('modal-active')
-
-  } else{
-    modal.classList.remove('modal-active');
-
-  }
-}
-
 
 //-------------------------
 // Scroll Reveal
@@ -126,7 +106,9 @@ emailjs.init({
   publicKey: 'ulPbOaIOyWSrlW4l0',
 });
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+
+if(document.getElementById('contact-form')){
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
     let verify = verifyForm();
     if(verify){
@@ -148,17 +130,21 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     
 });
 
+}
+
+
 
 //-------------------------
 // Contact Buttons
 //-------------------------
+if(document.getElementById("discord")){
+  document.getElementById("discord").addEventListener('click', () => { contactCopy('Discord') })
+}
 
-document.getElementById("discord").addEventListener('click', () =>{
-  contactCopy('Discord');
-})
-document.getElementById("email").addEventListener('click', () =>{
-  contactCopy('Email');
-})
+
+if(document.getElementById("email")){
+document.getElementById("email").addEventListener('click', () => { contactCopy('Email') })
+}
 
 //contact info to clipboard
 function contactCopy(contactInfo){
@@ -227,6 +213,44 @@ const darkBtn = document.getElementById("dark-btn")
 
 
 //-------------------------
-// Resume Download
+// Project Buttons
 //-------------------------
 
+const projects = document.querySelectorAll(".project-wrapper");
+console.log(projects)
+projects.forEach(el => {
+  let wrapper = el.getElementsByClassName("proj-imgs")[0];
+  let imgBtns = wrapper.querySelectorAll(".img-btn");
+  console.log(imgBtns)
+  
+  imgBtns[0].addEventListener("click" , () =>{
+    toggleProjectImages('desktop', wrapper)
+  })
+  imgBtns[1].addEventListener("click" , () =>{
+    toggleProjectImages('mobile', wrapper)
+  })
+
+});
+
+console.log('oops')
+
+function toggleProjectImages(platform, wrapperElement){
+  let desktopImgs = wrapperElement.querySelectorAll(".desktop")[0];
+  let mobileImgs = wrapperElement.querySelectorAll(".mobile")[0];
+  console.log('oops')
+  switch(platform){
+    case "mobile":
+      if(mobileImgs.style.display = "none"){
+        desktopImgs.style.display = "none"
+        mobileImgs.style.display = "inherit"
+      }
+      break;
+      case "desktop":
+        if(desktopImgs.style.display = "none"){
+          mobileImgs.style.display = "none"
+          desktopImgs.style.display = "inherit"
+        }
+    
+  }
+
+}
