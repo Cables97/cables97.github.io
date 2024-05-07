@@ -35,6 +35,30 @@ function expandingSection(element){
 //-------------------------
 // Modal Buttons
 //-------------------------
+if(document.getElementById('modal')){
+const certBtn = document.getElementById("cert-btn");
+const modal = document.getElementById("modal");
+const modalbg = document.getElementById("modal-bg");
+const modalX = document.getElementById("modal-x");
+
+certBtn.addEventListener("click", () => {
+
+  if(modal.style.display = 'none'){
+    modal.style.display = 'inherit'
+  } else {
+    modal.style.display = 'none'
+  }
+})
+modalbg.addEventListener("click", () => {
+  console.log('boop')
+  modal.style.display = 'none'
+})
+modalX.addEventListener("click", () => {
+  console.log('boop')
+  modal.style.display = 'none'
+})
+}
+
 
 //-------------------------
 // Scroll Reveal
@@ -254,3 +278,11 @@ function toggleProjectImages(platform, wrapperElement){
   }
 
 }
+
+
+
+
+
+
+
+
