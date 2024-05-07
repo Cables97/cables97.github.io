@@ -752,7 +752,6 @@ dialog{
 // --------------------------------
 
 .project-wrapper {
-    @include proxyborder(red);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -812,7 +811,6 @@ dialog{
         justify-content: center;
     }
     .proj-download{
-        @include proxyborder(red);
         align-self: flex-end;
     }
 

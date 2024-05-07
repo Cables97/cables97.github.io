@@ -767,7 +767,6 @@ dialog {
 }
 
 .project-wrapper {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -816,7 +815,6 @@ dialog {
   justify-content: center;
 }
 .project-wrapper .proj-download {
-  border: 1px solid red;
   align-self: flex-end;
 }
 
