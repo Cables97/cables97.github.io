@@ -60,7 +60,6 @@ body.dark-mode {
   color: var(--text-color);
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
   font-size: 1em;
   margin-bottom: 20px;
@@ -142,15 +141,8 @@ body.dark-mode {
   left: 0;
   height: 3em;
   width: 100%;
-  transition: transform 0.25s;
-  cursor: pointer;
-  z-index: 99;
   z-index: 99;
   background-color: var(--secondary);
-}
-.bot-nav:hover {
-  transform: translate(0, -0.5em);
-  filter: brightness(80%);
 }
 .bot-nav .nav {
   height: 100%;
@@ -164,7 +156,6 @@ body.dark-mode {
   color: var(--text-color);
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
   -webkit-text-decoration: 0;
           text-decoration: 0;
@@ -226,7 +217,6 @@ hr {
   color: var(--text-color);
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
   text-align: center;
   color: var(--secondary);
@@ -301,7 +291,6 @@ hr {
   color: var(--text-color);
   font-weight: 500;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
   text-wrap: wrap;
 }
@@ -323,16 +312,18 @@ hr {
   color: var(--text-color);
   font-weight: 500;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
   line-height: 60%;
+}
+.section-blurb .more-info p {
+  font-size: 1em;
 }
 .section-blurb .more-info:hover {
   cursor: pointer;
 }
 
 section {
-  min-height: 100vh;
+  max-height: 100vh;
   opacity: 0;
 }
 
@@ -412,7 +403,6 @@ p {
   color: var(--text-color);
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
 }
 
@@ -421,7 +411,6 @@ a {
   color: var(--text-color);
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
   text-decoration: none;
 }
@@ -438,7 +427,6 @@ a:visited {
   color: var(--text-color);
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
   box-shadow: 2px 2px 5px 2px rgba(54, 54, 54, 0.25);
   border: 1px solid rgba(92, 92, 92, 0.1);
@@ -473,7 +461,6 @@ i {
   color: var(--text-color);
   font-weight: 500;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
 }
 
@@ -488,7 +475,6 @@ dialog {
 
 .section-intro {
   position: relative;
-  min-height: 100vh;
 }
 .section-intro .name-title {
   margin: 100px auto 0;
@@ -539,6 +525,7 @@ dialog {
 .section-intro .certs {
   position: relative;
   margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 .section-projects {
@@ -573,7 +560,6 @@ dialog {
   color: var(--text-color);
   font-weight: 500;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
   text-align: center;
 }
@@ -584,7 +570,6 @@ dialog {
   color: var(--text-color);
   font-weight: 500;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
   color: #363636;
   border-radius: 5px;
@@ -604,7 +589,6 @@ dialog {
   color: var(--text-color);
   font-weight: 500;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
   border-radius: 5px;
   border: none;
@@ -658,7 +642,6 @@ dialog {
   color: var(--text-color);
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
 }
 
@@ -667,7 +650,6 @@ dialog {
   color: var(--text-color);
   font-weight: 300;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
   text-align: center;
   font-size: 14px;
@@ -702,7 +684,6 @@ dialog {
   color: var(--text-color);
   font-weight: 600;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
   text-align: center;
   margin: 0;
@@ -743,19 +724,16 @@ dialog {
 .modal-wrapper .modal .x-icon:hover {
   cursor: pointer;
 }
-.modal-wrapper .modal h3 {
-  font-family: var(--font-text);
-  color: var(--text-color);
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2em;
-  text-align: center;
-}
 .modal-wrapper .modal .line {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  position: relative;
   border: 0.5px solid rgba(29, 29, 29, 0.25);
+  padding: 0 1em;
+}
+.modal-wrapper .modal .line h6 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
 }
 .modal-wrapper .modal .line:nth-child(2n) {
   background-color: var(--background);
@@ -826,7 +804,6 @@ dialog {
   color: var(--text-color);
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
   line-height: 150%;
   box-shadow: 2px 2px 5px 2px rgba(54, 54, 54, 0.25);
   border: 1px solid rgba(92, 92, 92, 0.1);
@@ -913,16 +890,10 @@ dialog {
 }
 @keyframes m-title-lift {
   0% {
-    left: 50%;
-    top: 25%;
-    transform: translate(-50%, -50%);
-    font-size: 16px;
+    height: 400px;
   }
   100% {
-    left: 50%;
-    top: 10%;
-    transform: translate(-50%, -50%);
-    font-size: 46px;
+    height: 100px;
   }
 }
 @keyframes error-popup {
@@ -953,7 +924,7 @@ dialog {
     transform: translate(0, 0);
   }
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 860px) {
   .section-blurb {
     flex-direction: column;
     width: 90%;
@@ -1002,7 +973,6 @@ dialog {
     color: var(--text-color);
     font-weight: 500;
     font-style: normal;
-    font-size: 16px;
     line-height: 150%;
     text-wrap: wrap;
   }
@@ -1025,9 +995,6 @@ dialog {
     height: 100%;
     margin: auto;
     transform: translate(0, 0);
-  }
-  .section-title {
-    margin-left: 2em;
   }
   .section-title h2 {
     font-family: var(--font-text);
@@ -1079,7 +1046,6 @@ dialog {
     color: var(--text-color);
     font-weight: 500;
     font-style: normal;
-    font-size: 16px;
     line-height: 150%;
   }
   .section-contact .contact-wrapper {
@@ -1125,5 +1091,11 @@ dialog {
   }
   .popup {
     animation: m-error-popup 5s ease-in 0s 1 forwards;
+  }
+  .section-blurb .more-info p {
+    font-size: 0.7em;
+  }
+  .section-blurb .more-info:hover {
+    cursor: pointer;
   }
 }/*# sourceMappingURL=stylesheet.css.map */

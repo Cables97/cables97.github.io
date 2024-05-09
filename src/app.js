@@ -10,7 +10,7 @@ blurbs.forEach(element => {
 function expandingSection(element){
   //clicking blurb expands it, fades in text. 
    let text = element.getElementsByClassName("blurb-text")[0];
-   let expand = element.getElementsByClassName("more-info")[0];
+   let expand = element.getElementsByClassName("more-info")[0].getElementsByClassName("hover-text")[0];
 
   if(!element.classList.contains('expand')){
     console.log('grow');
@@ -18,7 +18,7 @@ function expandingSection(element){
 
     text.classList.add('active');
     text.style.display = 'inherit';
-    expand.innerHTML = 'Hide Info...'
+    expand.innerText = 'Hide Info...'
   }
   else{
     console.log('shrink');
@@ -26,7 +26,7 @@ function expandingSection(element){
 
     //text.classList.add('inactive');
     text.style.display = 'none';
-    expand.innerHTML = 'More Info...'
+    expand.innerText = 'More Info...'
   }
 
   //clicking again shortens it, text disappears 
