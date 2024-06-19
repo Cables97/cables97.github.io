@@ -217,23 +217,31 @@ document.addEventListener('mousemove', (e) => {
 
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 const currentTheme = localStorage.getItem("theme");
-const darkBtn = document.getElementById("dark-btn")
+const darkBtn = document.querySelectorAll(".dark-btn")
+
 
   if (currentTheme == "dark") {
     document.body.classList.toggle("dark-mode");
-    darkBtn.checked = true;
+    darkBtn.forEach(element => {
+      element.checked = true;
+    });
+    
   } else if (currentTheme == "light") {
     document.body.classList.toggle("light-mode");
-    darkBtn.checked = false;
+    darkBtn.forEach(element => {
+      element.checked = true;
+    });
   }
-
-  darkBtn.addEventListener('click', ()=>{
-    document.body.classList.toggle("dark-mode");
-    var theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
-
-    console.log(theme);
-    localStorage.setItem("theme", theme);
+  darkBtn.forEach(element => {
+    element.addEventListener('click', ()=>{
+      document.body.classList.toggle("dark-mode");
+      var theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+  
+      console.log(theme);
+      localStorage.setItem("theme", theme);
+    });
   });
+
 
 
 //-------------------------
@@ -266,7 +274,7 @@ function toggleProjectImages(platform, wrapperElement){
     case "mobile":
       if(mobileImgs.style.display = "none"){
         desktopImgs.style.display = "none"
-        mobileImgs.style.display = "inherit"
+        mobileImgs.style.display = "flex"
       }
       break;
       case "desktop":
@@ -279,7 +287,25 @@ function toggleProjectImages(platform, wrapperElement){
 
 }
 
+const domPopButton = document.getElementById("pop-btn");
+const domPopBG = document.getElementById("pop-bg");
+const domPopWindow = document.getElementById("pop-window");
 
+if(domPopButton){
+  domPopButton.addEventListener('click', togglePopWindow);
+}
+
+if(domPopBG){
+  domPopBG.addEventListener('click', togglePopWindow);
+}
+
+function togglePopWindow(){
+  console.log(domPopWindow.style.display)
+
+  if(domPopWindow.classList.contains("pop-active")){
+    domPopWindow.classList.remove("pop-active")
+  } else{ domPopWindow.classList.add("pop-active")}
+}
 
 
 
