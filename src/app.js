@@ -252,15 +252,17 @@ const projects = document.querySelectorAll(".project-wrapper");
 console.log(projects)
 projects.forEach(el => {
   let wrapper = el.getElementsByClassName("proj-imgs")[0];
-  let imgBtns = wrapper.querySelectorAll(".img-btn");
-  console.log(imgBtns)
   
+if(wrapper.querySelectorAll(".img-btn").length > 0){
+  let imgBtns = wrapper.querySelectorAll(".img-btn");
   imgBtns[0].addEventListener("click" , () =>{
     toggleProjectImages('desktop', wrapper)
   })
   imgBtns[1].addEventListener("click" , () =>{
     toggleProjectImages('mobile', wrapper)
   })
+}  
+
 
 });
 
