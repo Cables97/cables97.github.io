@@ -779,6 +779,7 @@ dialog {
 .project-wrapper .proj-img {
   height: 500px;
   width: auto;
+  max-width: 800px;
 }
 .project-wrapper .proj-txt {
   min-height: calc(100vh - 560px - 16em);
